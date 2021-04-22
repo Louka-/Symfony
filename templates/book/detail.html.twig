@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} Home {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h3>{{book.title}}</h3>
+                <p>parution: {{book.parution|date("d/m/Y")}}</p>
+                <figure class="d-flex justify-content-center">
+                    <img src="{{asset('images/'~book.cover)}}" alt="">
+                </figure>
+                <p>{{book.resume}}</p>
+                <p>{{book.prix}}</p>
+                <a href="{{path('app_book')}}">retour</a>
+            </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    <style>
+       p {color: blue;}
+    </style>
+
+{% endblock %}
